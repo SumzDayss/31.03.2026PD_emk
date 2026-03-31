@@ -39,7 +39,8 @@ class BookController extends Controller
         return view('books.edit', ['editBook' => $book]);
     }
 
-    public function destroy() {
+    public function destroy($id) {
+        $book = Book::find($id);
         $book->delete();
         return redirect('/books');
     }
