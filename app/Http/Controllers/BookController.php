@@ -11,7 +11,6 @@ class BookController extends Controller
         $books = Book::all();
         return view('books.index', ['books' => $books]);
     }
-
     public function create() {
         return view('books.create');
     }
@@ -25,8 +24,7 @@ class BookController extends Controller
             'released_at' => $request['released_at'],
 
         ]);
-
-        return redirect('/books', ['books' => $book]);
+        return redirect('books');
     }
 
     public function show($id) {
