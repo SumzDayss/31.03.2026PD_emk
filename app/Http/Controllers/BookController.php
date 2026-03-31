@@ -26,7 +26,7 @@ class BookController extends Controller
 
         ]);
 
-        return redirect('/books', ['books' => $books]);
+        return redirect('/books', ['books' => $book]);
     }
 
     public function show($id) {
