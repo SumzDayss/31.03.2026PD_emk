@@ -43,4 +43,7 @@ class BookController extends Controller
         $book->delete();
         return redirect('/books');
     }
+    public function about(){
+        return view('general.contact', ['name' => "Jānis","email" => 'janis@example.com',"response" => "Jūsu mājaslapa ir izcila!"]);
+    }
 }
