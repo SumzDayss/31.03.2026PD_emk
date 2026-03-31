@@ -15,14 +15,18 @@ class BookController extends Controller
     public function create() {
         return view('books.create');
     }
-
+    public function update(){
+        return view('books.create' );
+         }
     public function store(Request $request) {
         $book = Book::create([
+            'title' => $request['title'],
             'author' => $request['author'],
             'released_at' => $request['released_at'],
+
         ]);
 
-        return redirect('/books/' . $book->id);
+        return redirect('/books', ['books' => $books]);
     }
 
     public function show($id) {
